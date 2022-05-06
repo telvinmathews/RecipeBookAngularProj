@@ -6,5 +6,40 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recipe-book';
+  title = 'Recipe Book';
+  imgUrl = 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg';
+  count = 0;
+  name: string;
+  username: string;
+  private _customerName: string;
+
+  get customerName(): string {
+    return this._customerName;
+  }
+
+  set customerName(value: string){
+    this._customerName = value;
+    if (value === 'Jim') {
+      alert("HELLO Jim!")
+    }
+  }
+
+
+  incrementCount() {
+    this.count += 1;
+  }
+
+  clearCount() {
+    this.count = 0;
+  }
+
+  greetSomeOne(event: any) {
+    this.username = event;
+    if (event === 'Jim') {
+      alert("Welcome back Jim!")
+    }
+
+  }
+
+
 }
